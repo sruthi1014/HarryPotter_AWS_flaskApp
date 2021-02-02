@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>{{data.index.values[0]}}</h1>
+    <br>
+    <h2 > Gender:<span style="color:purple">{{data['Gender'].values[0]}}</span> </h2>
+    <h2> Skills: <span style="color:purple">{{data['Skills'].values[0]}}</span> </h2>
+    <br>
+    {%if data['House'].values[0]=='Slytherin'%}
+    <h1 style="color:green">Slytherin</h1>
+    <img src="static\slytherin.jpg" style="width:500px;height:600px;">
+
+    {%elif data['House'].values[0]=='Gryffindor' %}
+    <h1 style="color:Orange">Gryffindor</h1>
+     <img src="static\gryffindor.jpg" style="width:500px;height:600px;">
+
+    {%elif data['House'].values[0]=='Hufflepuff' %}
+    <h1 style="color:yellow">Hufflepuff</h1>
+     <img src="static\hufflepuff.jpg" style="width:500px;height:600px;">
+
+    {%elif data['House'].values[0]=='Ravenclaw' %}
+    <h1 style="color:Blue">Ravenclaw</h1>
+     <img src="static\ravenclaw.jpg" style="width:500px;height:600px;">
+
+    <%else%>
+    <h1>unknown or no house></h1>
+    {%endif%}
+<br>
+    <a href='/'> Go back to home page</a>
+</center>
+</body>
+</html>

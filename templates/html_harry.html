@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harry Potter Sorted Houses</title>
+</head>
+<body>
+<center>
+    <h1>Harry Potter Sorted Houses </h1>
+
+    <script>
+        function yesnoCheck(that) {
+        if (that.value == "other") {
+        alert("enter a character name in the other character field");
+        document.getElementById("ifYes").style.display = "block";
+        }
+        else {
+        document.getElementById("ifYes").style.display = "none";
+        }
+        }
+    </script>
+
+    <form method="POST", action="{{url_for('fetch')}}">
+
+
+          <label for="character">Choose a Character:</label>
+          <select onchange="yesnoCheck(this);" id="character" name="a">
+              <option value = ""></option>
+               <option value = "Harry James Potter">Harry James Potter</option>
+               <option value = "Ronald Bilius Weasley">Ronald Bilius Weasley</option>
+               <option value = "Hermione Jean Granger">Hermione Jean Granger</option>
+               <option value = "Albus Percival Wulfric Brian Dumbledore">Albus Percival Wulfric Brian Dumbledore</option>
+              <option value = "Cho Chang">Cho Chang</option>
+               <option value = "Luna Lovegood">Luna Lovegood</option>
+              <option value = "Gilderoy Lockhart">Gilderoy Lockhart</option>
+               <option value = "Filius Flitwick">Filius Flitwick</option>
+              <option value = "Severus Snape">Severus Snape</option>
+               <option value = "Draco Malfoy">Draco Malfoy</option>
+              <option value = "Bellatrix Lestrange">Bellatrix Lestrange</option>
+               <option value = "Dolores Jane Umbridge">Dolores Jane Umbridge</option>
+              <option value = "Tom Marvolo Riddle">Tom Marvolo Riddle</option>
+               <option value = "Nymphadora Tonks">Nymphadora Tonks</option>
+              <option value = "Cedric Diggory">Cedric Diggory</option>
+               <option value = "Edward Remus Lupin">Edward Remus Lupin</option>
+              <option value = "Newton Scamander">Newton Scamander</option>
+               <option value = "Pomona Sprout">Pomona Sprout</option>
+              <option value="other">other</option>
+             </select>
+             <br> <br>
+
+
+        <div id="ifYes" style="display: none;">
+            <br>
+    <label for="character">other character</label> <input type="text" id="otherchar" name="b" />
+            <a href="static\listofcharacters.pdf" target="_blank">list of names FYR</a>
+    </div>
+        <br>
+        <br>
+        <input type="submit", value="Fetch details">
+
+
+        <br>
+        <br>
+        <img src="static\houses.jpg" style="width:500px;height:600px;">
+    </form>
+</center>
+</body>
+</html>
